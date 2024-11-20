@@ -23,7 +23,7 @@ public class Equipo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cod_equipo", length = 6, nullable = false)
-	private String cod_equipo;
+	private Long cod_equipo;
 	
 	@Column(name = "nom_equipo")
 	private String nom_equipo;

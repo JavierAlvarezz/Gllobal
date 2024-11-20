@@ -26,12 +26,12 @@ public class EquipoController {
 	
 	@PostMapping("/registrar")
 	@ResponseBody
-	public ResponseEntity<?> insertarEquipo(@RequestBody Equipo obj) {
+	public ResponseEntity<?> insertarEquipo(@RequestBody Equipo bean) {
 		Map<String, Object> salida = new HashMap<>();	
 		
 		try {
 			
-			Equipo objSalida = service.registrarEquipo(obj);
+			Equipo objSalida = service.registrarEquipo(bean);
 			if(objSalida == null) {
 				salida.put("mensaje", AppSettings.MENSAJE_REG_ERROR);
 			}else {
