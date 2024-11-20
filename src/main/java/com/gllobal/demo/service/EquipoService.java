@@ -1,5 +1,7 @@
 package com.gllobal.demo.service;
 
-public interface EquipoService {
+import com.gllobal.demo.entity.Equipo;
 
+public interface EquipoService {
+	Equipo registrarEquipo(Equipo bean);
 }
