@@ -1,6 +1,7 @@
 package com.gllobal.demo.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,12 @@ public class EquipoController {
 		Map<String, Object> salida = new HashMap<>();	
 		
 		try {
+			
+			List<Equipo> validarCOD = service.listarIgualCodigo(bean.getCod_equipo());
+			if(!validarCOD.isEmpty()) {
+				salida.put("mensaje", AppSettings.MENSAJE_COD_EXISTE);
+				return ResponseEntity.ok(salida);
+			}
 			
 			Equipo objSalida = service.registrarEquipo(bean);
 			if(objSalida == null) {
