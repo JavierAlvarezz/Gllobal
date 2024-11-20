@@ -1,5 +1,7 @@
 package com.gllobal.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,12 @@ public class EquipoServiceImpl implements EquipoService {
 	@Override
 	public Equipo registrarEquipo(Equipo bean) {
 		return repo.save(bean);
+	}
+
+	@Override
+	public List<Equipo> listarIgualCodigo(String cod_equipo) {
+		
+		return repo.listarIgualCodigo(cod_equipo);
 	}
 	
 }
