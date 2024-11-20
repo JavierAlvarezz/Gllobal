@@ -6,8 +6,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -21,9 +19,8 @@ import lombok.Setter;
 @Setter
 public class Equipo {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cod_equipo", length = 6, nullable = false)
-	private Long cod_equipo;
+	private String cod_equipo;
 	
 	@Column(name = "nom_equipo")
 	private String nom_equipo;
